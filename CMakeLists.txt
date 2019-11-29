@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.13)
 project(DataCentersManager)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(untitled main.cpp linkedList.h DataCenter.h)
+add_executable(untitled main.cpp linkedList.h DataCenter.h DataManagerExceptions.h "Data Structures/AVLTree/AVLTree.cpp" "Data Structures/AVLTree/AVLTree.h")
