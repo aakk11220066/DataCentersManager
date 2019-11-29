@@ -3,4 +3,4 @@ project(DataCentersManager)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(untitled main.cpp linkedList.h DataCenter.h DataManagerExceptions.h "Data Structures/AVLTree/AVLTree.cpp" "Data Structures/AVLTree/AVLTree.h")
+add_executable(untitled main.cpp linkedList.h DataCenter.h DataManagerExceptions.h "Data Structures/AVLTree/AVLTree.cpp" "Data Structures/AVLTree/AVLTree.h" TreesTest.cpp "Data Structures/Queue.cpp" "Data Structures/Queue.h")

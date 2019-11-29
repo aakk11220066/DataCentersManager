@@ -38,6 +38,7 @@ public:
         }
         std::cout << std::endl;
     }
+
 };
 
 void DoubleLinkedList::beginningInsert(Node* p){
