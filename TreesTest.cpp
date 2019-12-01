@@ -33,6 +33,9 @@ int main() {
     Array<int> list = tree.getInOrder();
     for (int i = 0; i < list.getSize(); ++i) std::cout << list[i] << ", ";
 
+    //find test - success
+    std::cout << "\nLooking for 4, found " << tree.find(4);
+
     std::cout << "\nTest complete.";
     return 0;
 }

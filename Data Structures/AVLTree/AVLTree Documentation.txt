@@ -1,0 +1,46 @@
+Public member functions:
+
+    Constructor (no parameters)
+        O(1) time complexity
+        Does not throw exceptions
+
+    Destructor (no parameters)
+        O(n) time complexity
+        Does not throw exceptions
+
+    Copy Constructor - AVLTree(const AVLTree& original);
+        O(n) time complexity
+        Throws bad_alloc
+
+    operator= - AVLTree& operator=(const AVLTree& original);
+        O(n) time complexity
+        Throws bad_alloc
+
+    insert - void insert(const T& data);
+        Inserts an element into the tree
+        O(logn) time complexity
+        throws bad_alloc, DataManagerExceptions::ObjectAlreadyExists
+
+    remove - void remove(const T& data);
+        Removes an element from the tree
+        O(logn) time complexity
+        throws DataManagerExceptions::ObjectUnfound
+
+    find - virtual T& find(const T& data) const;
+        Returns an element from the tree
+        O(logn) time complexity
+        throws DataManagerExceptions::ObjectUnfound
+        NOTE: particularly useful for classes whose comparison operators only compare one element of class.
+            For instance, you can retrieve a particular DataCenter by using "find" with an empty DataCenter
+            you created whose ID matches the DataCenter you're trying to retrieve (assuming comparison operators
+            compare by ID)
+
+    getInOrder - Array<T> getInOrder() const;
+        Returns Array of all elements in tree (note: Array has operator[] and int getSize() functions)
+        O(n) time complexity
+        Does not throw excptions
+
+
+Dependencies:
+    1. AVLTree assumes data type T will implement operator== and operator> in O(1) time complexity
+    2. AVLTree assumes data type T will implement copy constructor, operator=, and destructor in O(1) time complexity
