@@ -38,7 +38,7 @@ Public member functions:
     getInOrder - Array<T> getInOrder() const;
         Returns Array of all elements in tree (note: Array has operator[] and int getSize() functions)
         O(n) time complexity
-        Does not throw excptions
+        throws bad_alloc
 
 
 Dependencies:
