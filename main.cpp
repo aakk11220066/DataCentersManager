@@ -16,12 +16,13 @@ int main() {
     db.beginningInsert(p3);
     db.endInsert(p56);
     db.print();
-    printf("head is %d, tail is %d\n", db.head->m_data, db.tail->m_data);
-    Node* temp = p56;
+    printf("head is %d, tail is %d\n", db.getHead()->getData(), db.getTail()->getData());
+    Node* temp = p3;
     db.deleteNode(temp);
     db.print();
-    printf("head is %d, tail is %d\n", db.head->m_data, db.tail->m_data);
-*/
+    printf("head is %d, tail is %d\n", db.getHead()->getData(), db.getTail()->getData());
+    */
+
 
     DataCenter dc(125, 5);
     //dc.printPosition();
@@ -39,6 +40,29 @@ int main() {
     dc.printServers();
     dc.freeServer(0);
     dc.printServers();
+
+    dc.requestServer(0,4, assigned);
+    dc.printServers();
+    dc.requestServer(0,4, assigned);
+    dc.printServers();
+    dc.requestServer(0,4, assigned);
+    dc.printServers();
+    dc.requestServer(0,4, assigned);
+    dc.printServers();
+    dc.requestServer(0,4, assigned);
+    dc.printServers();
+
+    dc.requestServer(1,1, assigned);
+    //dc.printServers();
+    dc.requestServer(1,4, assigned);
+    //dc.printServers();
+    dc.requestServer(1,3, assigned);
+    //dc.printServers();
+
+
+    DataCenter dc2(125, 3);
+    //if (dc2 > dc) printf("correct\n");
+    //if (dc2 == dc) printf("correct2\n");
     delete assigned;
 
     return 0;
