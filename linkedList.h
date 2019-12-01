@@ -4,6 +4,9 @@
 
 #ifndef UNTITLED_LINKEDLIST_H
 #define UNTITLED_LINKEDLIST_H
+
+#include <iostream>
+
 class Node {
 public:
     int m_data;
