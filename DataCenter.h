@@ -9,17 +9,22 @@
 #include "linkedList.h"
 
 class ServerDetails {
-public:
+private:
     int system;
     bool is_taken;
     Node *position;
 
-    ServerDetails(Node *p = nullptr) : position(p) {
+public:
+    explicit ServerDetails(Node *p = nullptr) : position(p) {
         system = 0;
         is_taken = false;
     }
-
-    void SetPosition(Node *p) { position = p; }
+    int getSystem() {return system;}
+    bool getIsTaken() {return is_taken;}
+    Node* getPosition(){return position;}
+    void setSystem(int given_system){system=given_system;}
+    void setIsTaken(bool given_is_taken){is_taken=given_is_taken;}
+    void setPosition(Node *p) { position = p; }
 };
 
 class DataCenter {
@@ -31,24 +36,34 @@ public:
     DoubleLinkedList linux_servers;
     DoubleLinkedList windows_servers;
     ServerDetails *servers;
+    enum DataCenterError{SUCCESS = 1, ERROR = 0};
 
+    /**
+     * constructor
+     * initializes a double linked list with a given size of elements.
+     * initializes an array of the same size
+     * @param given_id
+     * @param servers_num
+     */
     DataCenter(int given_id, int servers_num) : id(given_id), size(servers_num), linux_size(servers_num),
                                                 windows_size(0) {
         servers = new ServerDetails[size];
         for (int i = 0; i < size; i++) {
             Node *temp = new Node(i);
             linux_servers.beginningInsert(temp);
-            servers[i].SetPosition(temp);
+            servers[i].setPosition(temp);
         }
     }
-
+    /**
+    * destructor
+    */
     ~DataCenter() {
         delete[] servers;
     }
 
     void printPosition() {
         for (int i = 0; i < size; i++) {
-            std::cout << servers[i].position << "," << servers[i].system << ", " << servers[i].is_taken << ", \n";
+            std::cout << servers[i].getPosition() << "," << servers[i].getSystem() << ", " << servers[i].getIsTaken() << ", \n";
         }
     }
 
@@ -63,83 +78,116 @@ public:
 
     }
 
-    void requestServer(int os, int given_server, int *assigned_server);
+    /**
+     * operator==
+     * opeator>
+     * @param dc
+     * @return
+     */
+    bool operator==(DataCenter &dc){return (id==dc.id); }
+    bool operator>(DataCenter &dc){ return (id>dc.id); }
+
+    /**
+     * marking an untaken server as taken and returning its number.
+     * in case the given server is taken, call requestTakenServer, else call requestNonTakenServer.
+     *
+     * @param os
+     * @param given_server
+     * @param assigned_server
+     * @return
+     */
+    DataCenterError requestServer(int os, int given_server, int *assigned_server);
+
 
     void requestNonTakenServer(int os, int given_server);
 
     int requestTakenServer(int os, int given_server);
 
-    void freeServer(int given_server);
+    /**
+     *
+     * @param given_server
+     * @return
+     */
+    DataCenterError freeServer(int given_server);
 
-    bool hasFreeServer(){ return (linux_servers.size + windows_servers.size);}
+    bool hasFreeServer(){ return (linux_servers.getSize() + windows_servers.getSize());}
 
 };
 
-void DataCenter::requestServer(int os, int given_server, int *assigned_server) {
-    if ((os > 1) || (os < 0)) return;
-    if ((given_server >= size) || (given_server < 0)) return;
-    if (!servers[given_server].is_taken) {
+DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, int *assigned_server) {
+    if ((os > 1) || (os < 0)) return ERROR;
+    if ((given_server >= size) || (given_server < 0)) return ERROR;
+    if (!hasFreeServer()) return ERROR;
+    if (assigned_server == nullptr) return ERROR;
+    if (!servers[given_server].getIsTaken()) {
         DataCenter::requestNonTakenServer(os, given_server);
         *assigned_server = given_server;
     } else {
         *assigned_server = DataCenter::requestTakenServer(os, given_server);
     }
+    return SUCCESS;
 }
 
 int DataCenter::requestTakenServer(int os, int given_server) {
-    int inserted_id = -1;
-    if (((os == 0) && linux_servers.tail)|| ((os == 1) && !windows_servers.tail)) {
-        inserted_id = linux_servers.tail->m_data;
-        linux_servers.deleteNode(linux_servers.tail);
+    int inserted_id = -1, flag =0;
+    if (((os == 0) && linux_servers.getSize())|| ((os == 1) && !windows_servers.getSize())) {
+        printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
+        inserted_id = linux_servers.getTail()->getData();
+        linux_servers.deleteNode(linux_servers.getTail());
+        printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
+        flag = 1;
     }
-    if (((os == 1)&& windows_servers.tail) || ((os == 0) && !linux_servers.tail)) {
-        inserted_id = windows_servers.tail->m_data;
-        windows_servers.deleteNode(windows_servers.tail);
+    if (((os == 1)&& windows_servers.getSize()) || (((os == 0) && !linux_servers.getSize()) && (flag == 0))) {
+        inserted_id = windows_servers.getTail()->getData();
+        windows_servers.deleteNode(windows_servers.getTail());
     }
-    if ((os == 1) && !windows_servers.tail) {
-        linux_size--;
-        windows_size++;
-    }
-    if ((os == 0) && !linux_servers.tail) {
-        linux_size++;
-        windows_size--;
-    }
-    servers[inserted_id].is_taken = true;
-    servers[inserted_id].system = os;
-    servers[inserted_id].position = nullptr;
-    return inserted_id;
-}
-
-void DataCenter::requestNonTakenServer(int os, int given_server) {
-    if (!servers[given_server].system) {
-        linux_servers.deleteNode(servers[given_server].position);
-        if (servers[given_server].system != os) {
+    if (linux_size!= size && windows_size!= size) {
+        if ((os == 1) && !windows_servers.getTail()) {
             linux_size--;
             windows_size++;
         }
-    }
-    if (servers[given_server].system) {
-        windows_servers.deleteNode(servers[given_server].position);
-        if (servers[given_server].system != os) {
+        if ((os == 0) && !linux_servers.getTail()) {
             linux_size++;
             windows_size--;
         }
     }
-    servers[given_server].system = os;
-    servers[given_server].is_taken = true;
-    servers[given_server].position = nullptr;
+    servers[inserted_id].setIsTaken(true);
+    servers[inserted_id].setSystem(os);
+    servers[inserted_id].setPosition(nullptr);
+    return inserted_id;
 }
 
-void DataCenter::freeServer(int given_server){
-    if ((given_server < 0)||(given_server >= size)) return;
-    if (!servers[given_server].is_taken) return;
-    servers[given_server].is_taken = false;
-    Node* temp = new Node(given_server);
-    servers[given_server].position = temp;
-    if (servers[given_server].system ==0) linux_servers.beginningInsert(temp);
-    if (servers[given_server].system ==1) windows_servers.beginningInsert(temp);
-    //printf("head is %d, tail is %d\n", windows_servers.head->m_data, windows_servers.tail->m_data);
+void DataCenter::requestNonTakenServer(int os, int given_server) {
+    if (!servers[given_server].getSystem()) {
+        linux_servers.deleteNode(servers[given_server].getPosition());
+        if (servers[given_server].getSystem() != os) {
+            linux_size--;
+            windows_size++;
+        }
+    }
+    if (servers[given_server].getSystem()) {
+        windows_servers.deleteNode(servers[given_server].getPosition());
+        if (servers[given_server].getSystem() != os) {
+            linux_size++;
+            windows_size--;
+        }
+    }
+    servers[given_server].setSystem(os);
+    servers[given_server].setIsTaken(true);
+    servers[given_server].setPosition(nullptr);
 }
+
+DataCenter::DataCenterError DataCenter::freeServer(int given_server){
+    if ((given_server < 0)||(given_server >= size)) return ERROR;
+    if (!servers[given_server].getIsTaken()) return ERROR;
+    servers[given_server].setIsTaken(false);
+    Node* temp = new Node(given_server);
+    servers[given_server].setPosition(temp);
+    if (servers[given_server].getSystem() ==0) linux_servers.beginningInsert(temp);
+    if (servers[given_server].getSystem() ==1) windows_servers.beginningInsert(temp);
+    //printf("head is %d, tail is %d\n", windows_servers.head->m_data, windows_servers.tail->m_data);
+    return SUCCESS;
+    }
 
 
 
