@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "linkedList.h"
+#include "Data Structures/Array.h"
 
 class ServerDetails {
 private:
@@ -35,8 +36,10 @@ public:
     int windows_size;
     DoubleLinkedList linux_servers;
     DoubleLinkedList windows_servers;
-    ServerDetails *servers;
+    Array<ServerDetails> servers;
     enum DataCenterError{SUCCESS = 1, ERROR = 0};
+
+    virtual ~DataCenter() = default;
 
     /**
      * constructor
@@ -46,19 +49,12 @@ public:
      * @param servers_num
      */
     DataCenter(int given_id, int servers_num) : id(given_id), size(servers_num), linux_size(servers_num),
-                                                windows_size(0) {
-        servers = new ServerDetails[size];
+                                                windows_size(0), servers(Array<ServerDetails>(size)) {
         for (int i = 0; i < size; i++) {
             Node *temp = new Node(i);
             linux_servers.beginningInsert(temp);
             servers[i].setPosition(temp);
         }
-    }
-    /**
-    * destructor
-    */
-    ~DataCenter() {
-        delete[] servers;
     }
 
     void printPosition() {

@@ -1,0 +1,80 @@
+//
+// Created by User on 2019-11-25.
+//
+
+#ifndef DATASTRUCTURESWETHW1_ARRAY_H
+#define DATASTRUCTURESWETHW1_ARRAY_H
+
+template<typename T>
+class Array {
+private:
+    unsigned int size;
+    T *arr;
+
+public:
+    //ctor
+    explicit Array(unsigned int size);
+
+    //dtor
+    virtual ~Array();
+
+    //copy ctor
+    Array(const Array &original);
+
+    //operator=
+    Array &operator=(const Array &original);
+
+    //operator[]
+    T &operator[](unsigned int index);
+
+    unsigned int getSize() const {
+        return size;
+    }
+
+    T *toCArray() const;
+};
+
+
+//-------IMPLEMENTATIONS-------
+
+template<typename T>
+Array<T>::Array(unsigned int size):size(size) {
+    arr = new T[size];
+}
+
+template<typename T>
+Array<T>::~Array() {
+    delete[] (arr);
+}
+
+template<typename T>
+Array<T>::Array(const Array &original):Array(original.size) {
+    for (int i = 0; i < size; ++i) {
+        arr[i] = original.arr[i];
+    }
+}
+
+template<typename T>
+Array<T> &Array<T>::operator=(const Array &original) {
+    for (int i = 0; i < size; ++i) {
+        arr[i] = original.arr[i];
+    }
+}
+
+template<typename T>
+T &Array<T>::operator[](unsigned int index) {
+    return arr[index];
+}
+
+template<typename T>
+T *Array<T>::toCArray() const {
+    T *result = new T[size];
+    const auto constThis = const_cast<Array<T> *>(this);
+    for (int i = 0; i < size; ++i) {
+        result[i] = (*this)[i];
+    }
+    return result;
+}
+
+
+#endif //DATASTRUCTURESWETHW1_ARRAY_H
