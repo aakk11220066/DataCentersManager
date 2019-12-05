@@ -1,5 +1,5 @@
 //
-// Created by User on 2019-11-25.
+// Created by Akiva on 2019-11-25.
 //
 
 #ifndef DATASTRUCTURESWETHW1_ARRAY_H
