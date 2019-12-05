@@ -20,9 +20,9 @@ public:
         system = 0;
         is_taken = false;
     }
-    int getSystem() {return system;}
-    bool getIsTaken() {return is_taken;}
-    Node* getPosition(){return position;}
+    int getSystem()const {return system;}
+    bool getIsTaken()const {return is_taken;}
+    Node* getPosition()const{return position;}
     void setSystem(int given_system){system=given_system;}
     void setIsTaken(bool given_is_taken){is_taken=given_is_taken;}
     void setPosition(Node *p) { position = p; }
@@ -80,8 +80,8 @@ public:
      * @param dc
      * @return
      */
-    bool operator==(DataCenter &dc){return (id==dc.id); }
-    bool operator>(DataCenter &dc){ return (id>dc.id); }
+    bool operator==(const DataCenter &dc) const{return (id==dc.id); }
+    bool operator>(const DataCenter &dc)const {return (id > dc.id); }
 
     /**
      * marking an untaken server as taken and returning its number.

@@ -18,8 +18,8 @@ public:
         if (os == 0) (servers_num =dc.linux_size);
         if (os == 1) (servers_num=dc.windows_size);
     }
-    int getID() {return id;}
-    bool operator> (const AuxDataCenter &aux_dc){
+    int getID() const {return id;}
+    bool operator> (const AuxDataCenter &aux_dc) const {
         if (servers_num < aux_dc.servers_num) return true;
         if (servers_num >= aux_dc.servers_num) return false;
         if (servers_num == aux_dc.servers_num){
@@ -28,7 +28,7 @@ public:
         return true;
         //line 27 added to avoid clion message
     }
-    bool operator==(const AuxDataCenter &aux_dc){
+    bool operator==(const AuxDataCenter &aux_dc) const {
         return ((aux_dc.id == id))&&(aux_dc.servers_num == servers_num);
     }
 };

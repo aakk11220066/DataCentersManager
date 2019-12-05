@@ -97,7 +97,7 @@ public:
         }
     }
 
-    DataCenterManagerError GetDataCentersByOs(int os, int **dataCenters, int *numOfDataCenters){
+    DataCenterManagerError GetDataCentersByOs(int os, int **dataCenters, int *numOfDataCenters) const {
         try {
             if ((os < 0) || (os > 1)) return ERROR;
             if ((dataCenters == nullptr) || (numOfDataCenters == nullptr)) return ERROR;
