@@ -48,7 +48,7 @@ public:
      * @param given_id
      * @param servers_num
      */
-    DataCenter(int given_id, int servers_num) : id(given_id), size(servers_num), linux_size(servers_num),
+    explicit DataCenter(int given_id, int servers_num = 0) : id(given_id), size(servers_num), linux_size(servers_num),
                                                 windows_size(0), servers(Array<ServerDetails>(size)) {
         for (int i = 0; i < size; i++) {
             Node *temp = new Node(i);
@@ -97,7 +97,7 @@ public:
 
     void requestNonTakenServer(int os, int given_server);
 
-    int requestTakenServer(int os, int given_server);
+    int requestTakenServer(int os);
 
     /**
      *
@@ -119,12 +119,12 @@ DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, 
         DataCenter::requestNonTakenServer(os, given_server);
         *assigned_server = given_server;
     } else {
-        *assigned_server = DataCenter::requestTakenServer(os, given_server);
+        *assigned_server = DataCenter::requestTakenServer(os);
     }
     return SUCCESS;
 }
 
-int DataCenter::requestTakenServer(int os, int given_server) {
+int DataCenter::requestTakenServer(int os) {
     int inserted_id = -1, flag =0;
     if (((os == 0) && linux_servers.getSize())|| ((os == 1) && !windows_servers.getSize())) {
         printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());

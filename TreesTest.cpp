@@ -2,11 +2,13 @@
 // Created by Akiva on 2019-11-29.
 //
 
-#include "Data Structures/AVLTree/AVLTree.h"
-#include <iostream>
+//#include "Data Structures/AVLTree/AVLTree.h"
+//#include <iostream>
+#include "DataCenterManager.h"
 
 int main() {
-    AVLTree<int> tree; //instantiation success
+
+    //AVLTree<int> tree; //instantiation success
     /*try{ //find failure throws exception - success
         tree.find(6);
         assert(0);
@@ -14,6 +16,7 @@ int main() {
         std::cout<<"typeid(error1) = "<<typeid(error1).name()<<"\n";
     }*/
     //insert elements - success
+/*
     tree.insert(10);
     tree.insert(5);
     tree.insert(15);
@@ -35,7 +38,12 @@ int main() {
 
     //find test - success
     std::cout << "\nLooking for 4, found " << tree.find(4);
+    //int temp = tree.find(7);
+    //printf("temp is %d", temp);
 
     std::cout << "\nTest complete.";
+*/
+    //DataCenterManager dcm;
+    //dcm.AddDataCenter(30,4);
     return 0;
 }
