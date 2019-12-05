@@ -20,7 +20,7 @@ protected:
         BinaryTreeNode *left = nullptr, *right = nullptr;
 
         //ctor
-        explicit BinaryTreeNode(T data);
+        explicit BinaryTreeNode(const T &data);
 
         //dtor
         virtual ~BinaryTreeNode();
@@ -126,7 +126,7 @@ BinaryTree<T>::BinaryTreeNode::deleteSingleNode() {
 };
 
 template<typename T>
-BinaryTree<T>::BinaryTreeNode::BinaryTreeNode(T data) : data(data) {}
+BinaryTree<T>::BinaryTreeNode::BinaryTreeNode(const T &data) : data(data) {}
 
 template<typename T>
 BinaryTree<T>::BinaryTreeNode::~BinaryTreeNode() {
