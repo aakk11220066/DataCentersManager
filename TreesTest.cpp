@@ -43,7 +43,7 @@ int main() {
 
     std::cout << "\nTest complete.";
 */
-    //DataCenterManager dcm;
-    //dcm.AddDataCenter(30,4);
+    DataCenterManager dcm;
+    dcm.AddDataCenter(30,2);
     return 0;
 }
