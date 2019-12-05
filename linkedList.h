@@ -14,9 +14,9 @@ private:
     Node *previous;
 public:
     explicit Node(int data = 0) : m_data(data), next(nullptr), previous(nullptr) {}
-    int getData() {return m_data;}
-    Node* getNext(){return next;}
-    Node* getPrevious(){return previous;}
+    int getData() const {return m_data;}
+    Node* getNext() const {return next;}
+    Node* getPrevious() const {return previous;}
     void setNext(Node* p){next = p;}
     void setPrevious(Node* p){if (p == nullptr) return; previous = p;}
     void print() { std::cout << m_data << std::endl; };
@@ -37,9 +37,9 @@ public:
             delete temp;
         }
     }
-    int getSize() {return size;}
-    Node* getTail(){return tail;}
-    Node* getHead(){ return head;}
+    int getSize() const {return size;}
+    Node* getTail() const {return tail;}
+    Node* getHead() const { return head;}
     void beginningInsert(Node* p);
     void endInsert(Node* p);
     void deleteNode(Node* p);

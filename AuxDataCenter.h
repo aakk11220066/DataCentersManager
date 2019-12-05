@@ -13,7 +13,9 @@ private:
     int servers_num;
 
 public:
-    explicit AuxDataCenter(const DataCenter &dc, int os){
+    AuxDataCenter()= default;
+    //added line 16 to solve not enough parameters provided for the constructor
+    AuxDataCenter(const DataCenter &dc, int os){
         id = dc.id;
         if (os == 0) (servers_num =dc.linux_size);
         if (os == 1) (servers_num=dc.windows_size);
