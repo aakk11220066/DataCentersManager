@@ -229,7 +229,7 @@ removeRecursive(typename AVLTree<T>::BinTreeNodePtr rootPtr, const T &data) {
 
     if (!rootPtr) throw DataManagerExceptions::ObjectUnfound();
     else if (data == rootPtr->data) {
-        return destroy<int>(rootPtr);
+        return destroy<T>(rootPtr);
     } else if (data > rootPtr->data) {
         rootPtr->right = removeRecursive(rootPtr->right, data);
     } else {
