@@ -56,7 +56,7 @@ public:
     DataCenterManagerError RequestServer(int DataCenterID, int ServerID, int os, int *assignedID){
         try {
             DataCenter dc_temp(DataCenterID);
-            DataCenter dc_to_alter = data_centers_tree.find(DataCenterID);
+            DataCenter dc_to_alter = data_centers_tree.find(dc_temp);
             DataCenter dc_before_change = dc_to_alter;
             if (!dc_to_alter.requestServer(os, ServerID, assignedID)) return ERROR;
             UpdateTrees(dc_before_change, dc_to_alter);
@@ -70,7 +70,7 @@ public:
     DataCenterManagerError FreeServer(int DataCenterID, int ServerID){
         try{
             DataCenter dc_temp(DataCenterID);
-            DataCenter dc_to_alter = data_centers_tree.find(DataCenterID);
+            DataCenter dc_to_alter = data_centers_tree.find(dc_temp);
             if (!dc_to_alter.freeServer(ServerID)) return ERROR;
             DataCenter dc_before_change = dc_to_alter;
             UpdateTrees(dc_before_change, dc_to_alter);
