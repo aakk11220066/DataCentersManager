@@ -59,6 +59,7 @@ Array<T> &Array<T>::operator=(const Array &original) {
     for (int i = 0; i < size; ++i) {
         arr[i] = original.arr[i];
     }
+    return *this;
 }
 
 template<typename T>
