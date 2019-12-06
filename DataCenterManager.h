@@ -105,23 +105,21 @@ public:
                 Array<AuxDataCenter> list0 = linux_tree.getInOrder();
                 if (!list0.getSize()) return ERROR;
                 int size0 = (int) list0.getSize();
-                int *arr0 = new int[size0];
+                *dataCenters = (int*)malloc(sizeof(int*)*size0);
                 for (int i = 0; i < size0; i++) {
-                    arr0[i] = list0[i].getID();
+                    (*dataCenters)[i] = list0[i].getID();
                 }
                 *numOfDataCenters = size0;
-                **dataCenters = *arr0;
             }
             if (os) {
                 Array<AuxDataCenter> list1 = windows_tree.getInOrder();
                 if (!list1.getSize()) return ERROR;
                 int size1 = (int) list1.getSize();
-                int *arr1 = new int[size1];
+                *dataCenters = (int *) malloc(sizeof(int *) * size1);
                 for (int i = 0; i < size1; i++) {
-                    arr1[i] = list1[i].getID();
+                    (*dataCenters)[i] = list1[i].getID();
                 }
                 *numOfDataCenters = size1;
-                **dataCenters = *arr1;
             }
             return SUCCESS;
         }

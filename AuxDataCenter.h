@@ -23,11 +23,11 @@ public:
     int getID() const {return id;}
     bool operator> (const AuxDataCenter &aux_dc) const {
         if (servers_num < aux_dc.servers_num) return true;
-        if (servers_num >= aux_dc.servers_num) return false;
+        if (servers_num > aux_dc.servers_num) return false;
         if (servers_num == aux_dc.servers_num){
-            return id < aux_dc.id;
+            return id > aux_dc.id;
         }
-        return true;
+        return false;
         //line 27 added to avoid clion message
     }
     bool operator==(const AuxDataCenter &aux_dc) const {
