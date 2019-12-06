@@ -51,7 +51,7 @@ int main() {
     int *arr;
     int num;
     int res = dcm.GetDataCentersByOs(0,&arr, &num);
-    if (res) printf("no error\n");
+    if (!res) printf("no error\n");
     printf("num = %d\n", num);
     for (int i=0; i< num; i++){
         printf("data is %d\n", arr[i]);

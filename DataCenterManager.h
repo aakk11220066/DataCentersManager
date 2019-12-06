@@ -15,7 +15,7 @@ private:
     AVLTree<AuxDataCenter> linux_tree;
     AVLTree<AuxDataCenter> windows_tree;
 public:
-    enum DataCenterManagerError{SUCCESS = 1, ERROR = 0};
+    enum DataCenterManagerError{SUCCESS = 0, ERROR = 1};
     DataCenterManager() = default;
     ~DataCenterManager() = default;
     DataCenterManagerError AddDataCenter(int DataCenterId, int numOfServers){
