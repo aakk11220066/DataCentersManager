@@ -11,5 +11,6 @@ namespace DataManagerExceptions{
     class Exceptions : std::exception{};
     class ObjectUnfound : Exceptions{};
     class ObjectAlreadyExists : Exceptions{};
+    class LinkedListExpired : Exceptions{};
 }
 #endif //DATACENTERSMANAGER_DATAMANAGEREXCEPTIONS_H
