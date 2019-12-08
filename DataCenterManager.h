@@ -41,7 +41,7 @@ public:
         if (DataCenterId <= 0) return ERROR;
         try {
             DataCenter dc_temp(DataCenterId);
-            DataCenter dc_to_delete = data_centers_tree.find(dc_temp);
+            DataCenter &dc_to_delete = data_centers_tree.find(dc_temp);
             if (!dc_to_delete.linux_size) {
                 AuxDataCenter linux_dc_temp(dc_to_delete, 0);
                 linux_tree.remove(linux_dc_temp);
