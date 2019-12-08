@@ -45,19 +45,23 @@ int main() {
 */
 
     DataCenterManager dcm;
-    dcm.AddDataCenter(31, 4);
+    dcm.AddDataCenter(31, 2);
     dcm.AddDataCenter(20, 8);
     dcm.AddDataCenter(50, 3);
+
     int *arr;
     int num;
+    dcm.RequestServer(66, 1, 1 , &num);
+    dcm.RequestServer(66, 1, 1 , &num);
+    /*
     int res = dcm.GetDataCentersByOs(0, &arr, &num);
 
     printf("res is %d\n", res);
     printf("num is %d\n", num);
-    //for (int i=0; i<*num; i++){
-      //  printf("data is %d\n", *arr[i]);
-    //}
-    //free(*arr);
-
+    for (int i=0; i<num; i++){
+        printf("data is %d\n", arr[i]);
+    }
+    free(arr);
+*/
     return 0;
 }

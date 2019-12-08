@@ -133,10 +133,10 @@ DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, 
 int DataCenter::requestTakenServer(int os) {
     int inserted_id = -1, flag =0;
     if (((os == 0) && linux_servers.getSize())|| ((os == 1) && !windows_servers.getSize())) {
-        printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
+        //printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
         inserted_id = linux_servers.getTail()->getData();
         linux_servers.deleteNode(linux_servers.getTail());
-        printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
+        //printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
         flag = 1;
     }
     if (((os == 1)&& windows_servers.getSize()) || (((os == 0) && !linux_servers.getSize()) && (flag == 0))) {

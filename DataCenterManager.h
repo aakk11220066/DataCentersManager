@@ -105,7 +105,9 @@ public:
                 Array<AuxDataCenter> list0 = linux_tree.getInOrder();
                 if (!list0.getSize()) return ERROR;
                 int size0 = (int) list0.getSize();
-                *dataCenters = (int*)malloc(sizeof(int*)*size0);
+                *dataCenters = (int*)malloc(sizeof(int)*size0);
+                //printf("size is %d\n", size0* sizeof(int));
+                //printf("size0 is %d\n", size0);
                 for (int i = 0; i < size0; i++) {
                     (*dataCenters)[i] = list0[i].getID();
                 }

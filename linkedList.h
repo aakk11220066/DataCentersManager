@@ -49,7 +49,7 @@ public:
     ~DoubleLinkedList(){
         if (doNotDelete) return;
         while(head!= nullptr){
-            Node* temp = head;
+            Node *temp = head;
             //head = head->next;
             head = head->getNext();
             delete temp;

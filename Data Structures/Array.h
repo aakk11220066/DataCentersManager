@@ -5,6 +5,7 @@
 #ifndef DATASTRUCTURESWETHW1_ARRAY_H
 #define DATASTRUCTURESWETHW1_ARRAY_H
 
+#include <iostream>
 template<typename T>
 class Array {
 private:
@@ -48,9 +49,11 @@ Array<T>::~Array() {
 }
 
 template<typename T>
-Array<T>::Array(const Array &original):Array(original.size) {
+Array<T>::Array(const Array &original): size(original.size), arr(new T[size]){
+    //arr = new T[size];
     for (int i = 0; i < size; ++i) {
         arr[i] = original.arr[i];
+
     }
 }
 
