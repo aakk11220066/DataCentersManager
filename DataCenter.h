@@ -37,7 +37,7 @@ public:
     DoubleLinkedList linux_servers;
     DoubleLinkedList windows_servers;
     Array<ServerDetails> servers;
-    enum DataCenterError{SUCCESS = 0, ERROR = 1};
+    enum DataCenterError{SUCCESS = 0, ERROR = -1};
 
     virtual ~DataCenter() = default;
 
