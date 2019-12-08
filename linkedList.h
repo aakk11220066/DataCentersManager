@@ -28,6 +28,7 @@ private:
     Node* head;
     Node* tail;
     int size;
+public:
     bool doNotDelete = false;
 public:
     DoubleLinkedList(): head(nullptr), tail(nullptr), size(0){}
@@ -112,7 +113,10 @@ void DoubleLinkedList::beginningInsert(Node* p){
         size++;
     }
 void DoubleLinkedList::deleteNode(Node *p){
-    if (doNotDelete) throw DataManagerExceptions::LinkedListExpired();
+    if (doNotDelete) {
+        printf("hig\n");
+        throw DataManagerExceptions::LinkedListExpired();
+    }
     if (size == 1){
         head = nullptr;
         tail = nullptr;

@@ -56,11 +56,11 @@ public:
     DataCenterManagerError RequestServer(int DataCenterID, int ServerID, int os, int *assignedID){
         try {
             DataCenter dc_temp(DataCenterID);
-            DataCenter dc_to_alter = data_centers_tree.find(dc_temp);
-            DataCenter dc_before_change = dc_to_alter;
+            DataCenter& dc_to_alter = data_centers_tree.find(dc_temp);
+            //DataCenter dc_before_change = dc_to_alter;
             if (dc_to_alter.requestServer(os, ServerID, assignedID) != 0) return ERROR;
             printf("hjghjgh\n");
-            UpdateTrees(dc_before_change, dc_to_alter);
+            //UpdateTrees(dc_before_change, dc_to_alter);
             return SUCCESS;
         }
         catch(DataManagerExceptions::Exceptions& e){
