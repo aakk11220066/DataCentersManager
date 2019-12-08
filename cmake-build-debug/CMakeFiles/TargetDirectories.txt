@@ -1,0 +1,3 @@
+D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/CMakeFiles/untitled.dir
+D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
