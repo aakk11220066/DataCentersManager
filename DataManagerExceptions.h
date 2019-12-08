@@ -8,9 +8,16 @@
 #include <exception>
 
 namespace DataManagerExceptions{
-    class Exceptions : std::exception{};
-    class ObjectUnfound : Exceptions{};
-    class ObjectAlreadyExists : Exceptions{};
-    class LinkedListExpired : Exceptions{};
+    class Exceptions : public std::exception {
+    };
+
+    class ObjectUnfound : public Exceptions {
+    };
+
+    class ObjectAlreadyExists : public Exceptions {
+    };
+
+    class LinkedListExpired : public Exceptions {
+    };
 }
 #endif //DATACENTERSMANAGER_DATAMANAGEREXCEPTIONS_H
