@@ -51,9 +51,9 @@ int main() {
 
     int *arr;
     int num;
-    dcm.RequestServer(66, 1, 1 , &num);
-    dcm.RequestServer(66, 1, 1 , &num);
-    /*
+    //dcm.RequestServer(50, 1, 1 , &num);
+    //dcm.RequestServer(50, 1, 1 , &num);
+
     int res = dcm.GetDataCentersByOs(0, &arr, &num);
 
     printf("res is %d\n", res);
@@ -62,6 +62,6 @@ int main() {
         printf("data is %d\n", arr[i]);
     }
     free(arr);
-*/
+
     return 0;
 }
