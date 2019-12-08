@@ -58,7 +58,8 @@ public:
             DataCenter dc_temp(DataCenterID);
             DataCenter dc_to_alter = data_centers_tree.find(dc_temp);
             DataCenter dc_before_change = dc_to_alter;
-            if (!dc_to_alter.requestServer(os, ServerID, assignedID)) return ERROR;
+            if (dc_to_alter.requestServer(os, ServerID, assignedID) != 0) return ERROR;
+            printf("hjghjgh\n");
             UpdateTrees(dc_before_change, dc_to_alter);
             return SUCCESS;
         }
@@ -84,14 +85,14 @@ public:
 
     void UpdateTrees(const DataCenter& dc_to_delete, const DataCenter& dc_to_add){
         AuxDataCenter linux_dc_to_delete(dc_to_delete, 0);
-        if (!dc_to_delete.linux_size) linux_tree.remove(linux_dc_to_delete);
-        if (!dc_to_add.linux_size){
+        if (dc_to_delete.linux_size) linux_tree.remove(linux_dc_to_delete);
+        if (dc_to_add.linux_size){
             AuxDataCenter linux_dc_to_add(dc_to_add, 0);
             linux_tree.insert(linux_dc_to_add);
         }
         AuxDataCenter windows_dc_to_delete(dc_to_delete, 1);
-        if (!dc_to_delete.windows_size) windows_tree.remove(windows_dc_to_delete);
-        if (!dc_to_add.windows_size){
+        if (dc_to_delete.windows_size) windows_tree.remove(windows_dc_to_delete);
+        if (dc_to_add.windows_size){
             AuxDataCenter windows_dc_to_add(dc_to_add, 0);
             windows_tree.insert(windows_dc_to_add);
         }
