@@ -39,6 +39,12 @@ public:
     Array<ServerDetails> servers;
     enum DataCenterError{SUCCESS = 0, ERROR = -1};
 
+    //copy ctor
+    DataCenter(const DataCenter &original) = default;
+
+    //operator=
+    DataCenter &operator=(const DataCenter &original) = default;
+
     virtual ~DataCenter() = default;
 
     /**
