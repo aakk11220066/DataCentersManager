@@ -22,7 +22,7 @@ public:
     DataCenterManager() = default;
 
     ~DataCenterManager() = default;
-//
+
     DataCenterManagerError AddDataCenter(int DataCenterId, int numOfServers) {
         if ((DataCenterId <= 0) || (numOfServers <= 0)) return ERROR;
         try {
