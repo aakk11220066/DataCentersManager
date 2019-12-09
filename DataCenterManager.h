@@ -30,7 +30,7 @@ public:
             data_centers_tree.insert(dc_temp);
             AuxDataCenter linux_aux_dc_temp(dc_temp, 0);
             linux_tree.insert(linux_aux_dc_temp);
-            AuxDataCenter windows_aux_dc_temp(dc_temp, 0);
+            AuxDataCenter windows_aux_dc_temp(dc_temp, 1);
             windows_tree.insert(windows_aux_dc_temp);
             return SUCCESS;
         }
@@ -99,15 +99,24 @@ public:
 
     void UpdateTrees(const AuxDataCenter &linux_dc_to_delete, const AuxDataCenter &windows_dc_to_delete,
                      const AuxDataCenter &linux_dc_to_add, const AuxDataCenter &windows_dc_to_add, int linux_size, int windows_size) {
+        /*
         if (linux_dc_to_add.getServersNum()) linux_tree.remove(linux_dc_to_delete);
         if (linux_size) {
             linux_tree.insert(linux_dc_to_add);
         }
 
-        if (windows_dc_to_add.getServersNum()) windows_tree.remove(windows_dc_to_delete);
+        if (windows_dc_to_add.getServersNum()) {
+            windows_tree.remove(windows_dc_to_delete);
+        }
         if (windows_size) {
             windows_tree.insert(windows_dc_to_add);
         }
+         */
+        linux_tree.remove(linux_dc_to_delete);
+        linux_tree.insert(linux_dc_to_add);
+        windows_tree.remove(windows_dc_to_delete);
+        windows_tree.insert(windows_dc_to_add);
+
     }
 
     DataCenterManagerError GetDataCentersByOs(int os, int **dataCenters, int *numOfDataCenters) const {
