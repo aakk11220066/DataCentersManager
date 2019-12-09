@@ -47,14 +47,17 @@ int main() {
 DataCenter dc(3,5);
 int num1;
 int res = dc.requestServer(1,3, &num1);
-printf("res is %d\n", res);
+int res2 = dc.freeServer(3);
+printf("res2 is %d\n", res2);
     DataCenterManager dcm;
     dcm.AddDataCenter(123, 5);
     printf("Added Data Center 123 5");
 
     int num;
     int result = dcm.RequestServer(123, 3, 1, &num);
+    int result2 = dcm.FreeServer(123,3);
     printf("\nRequested server, returned %d.", result);
+    printf("\nRequested server, returned %d.", result2);
 
     /*
     int *arr;
