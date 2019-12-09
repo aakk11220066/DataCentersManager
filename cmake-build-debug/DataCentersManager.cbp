@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug"/>
+				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug"/>
+				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled">
-				<Option output="D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug"/>
+				<Option output="D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -43,15 +43,15 @@
 					<Add directory="D:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
-					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
+					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled/fast">
-				<Option output="D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug"/>
+				<Option output="D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -65,57 +65,57 @@
 					<Add directory="D:/TDM-GCC-64/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
-					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
+					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug"/>
+				<Option working_dir="D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/TDM-GCC-64/bin/mingw32-make.exe -f &quot;D:/Users/Roy/Desktop/git/DataCentersManager2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/AuxDataCenter.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/AuxDataCenter.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/AVLTree.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/Data Structures/AVLTree/AVLTree.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/BinarySearchTree.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/Data Structures/AVLTree/BinarySearchTree.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/BinaryTree.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/Data Structures/AVLTree/BinaryTree.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/Array.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/Data Structures/Array.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/DataCenter.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/DataCenter.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/DataCenterManager.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/DataCenterManager.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/DataManagerExceptions.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/DataManagerExceptions.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/TreesTest.cpp">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/TreesTest.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/library.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/library.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/linkedList.h">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/linkedList.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager3/CMakeLists.txt">
+		<Unit filename="D:/Users/Roy/Desktop/git/DataCentersManager2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
