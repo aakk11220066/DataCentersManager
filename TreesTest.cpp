@@ -46,15 +46,18 @@ int main() {
 */
 
     DataCenterManager dcm;
-    dcm.AddDataCenter(31, 5);
-    dcm.AddDataCenter(20, 8);
+    //dcm.AddDataCenter(28, 8);
+    dcm.AddDataCenter(20, 5);
     dcm.AddDataCenter(50, 3);
+    //dcm.AddDataCenter(61, 7);
+    dcm.AddDataCenter(228,1);
+    dcm.AddDataCenter(40,7);
 
     int *arr;
     int num;
     //dcm.RequestServer(50, 1, 1 , &num);
     //dcm.RequestServer(50, 2, 1 , &num);
-    dcm.RemoveDataCenter(31);
+    dcm.RemoveDataCenter(50);
     int res = dcm.GetDataCentersByOs(0, &arr, &num);
 
     printf("res is %d\n", res);

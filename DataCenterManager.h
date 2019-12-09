@@ -42,6 +42,7 @@ public:
         try {
             DataCenter dc_temp(DataCenterId);
             DataCenter &dc_to_delete = data_centers_tree.find(dc_temp);
+
             if (dc_to_delete.linux_size) {
                 AuxDataCenter linux_dc_temp(dc_to_delete, 0);
                 linux_tree.remove(linux_dc_temp);
@@ -50,6 +51,7 @@ public:
                 AuxDataCenter windows_dc_temp(dc_to_delete, 1);
                 windows_tree.remove(windows_dc_temp);
             }
+
             data_centers_tree.remove(dc_temp);
             return SUCCESS;
         }
