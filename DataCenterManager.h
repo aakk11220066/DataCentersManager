@@ -24,8 +24,8 @@ public:
     ~DataCenterManager() = default;
 
     DataCenterManagerError AddDataCenter(int DataCenterId, int numOfServers) {
-        if ((DataCenterId <= 0) || (numOfServers <= 0)) return ERROR;
         try {
+            if ((DataCenterId <= 0) || (numOfServers <= 0)) return ERROR;
             DataCenter dc_temp(DataCenterId, numOfServers);
             data_centers_tree.insert(dc_temp);
             AuxDataCenter aux_dc_temp(dc_temp, 0);
