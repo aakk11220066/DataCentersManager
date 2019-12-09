@@ -45,12 +45,13 @@ int main() {
 */
 
     DataCenterManager dcm;
-    dcm.AddDataCenter(31, 2);
-    dcm.AddDataCenter(20, 8);
-    dcm.AddDataCenter(50, 3);
-    dcm.AddDataCenter(90, 4);
-    dcm.AddDataCenter(95, 5);
+    dcm.AddDataCenter(123, 5);
+    printf("Added Data Center 123 5");
 
+    int num;
+    int result = dcm.RequestServer(123, 3, 1, &num);
+    printf("\nRequested server, returned %d.", result);
+    /*
     int *arr;
     int num;
     dcm.RequestServer(50, 1, 1, &num);
@@ -69,6 +70,6 @@ int main() {
         //printf("data is %d\n", arr[i]);
     }
     //free(arr);
-
+     */
     return 0;
 }

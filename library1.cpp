@@ -6,7 +6,7 @@
 // Created by Roy on 06/12/19.
 //
 
-#include"library.h"
+#include"library1.h"
 #include "DataCenterManager.h"
 
 void *Init() {
@@ -23,7 +23,7 @@ StatusType RemoveDataCenter(void *DS, int dataCenterID) {
 }
 
 StatusType RequestServer(void *DS, int dataCenterID, int serverID, int os, int *assignedID){
-    return (StatusType)(((DataCenterManager *) DS)->RequestServer(dataCenterID, serverID, os, (int*) *assignedID));
+    return (StatusType) (((DataCenterManager *) DS)->RequestServer(dataCenterID, serverID, os, assignedID));
 }
 
 StatusType FreeServer(void *DS, int dataCenterID, int serverID){
@@ -31,7 +31,7 @@ StatusType FreeServer(void *DS, int dataCenterID, int serverID){
 }
 
 StatusType GetDataCentersByOS(void *DS, int os, int **dataCenters, int* numOfDataCenters){
-    return static_cast<StatusType>(((DataCenterManager *) DS)->GetDataCentersByOs(os, (int**) **dataCenters, (int*) *numOfDataCenters));
+    return static_cast<StatusType>(((DataCenterManager *) DS)->GetDataCentersByOs(os, dataCenters, numOfDataCenters));
 }
 
 void Quit(void** DS){

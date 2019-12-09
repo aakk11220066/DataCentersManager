@@ -17,7 +17,7 @@ namespace DataManagerExceptions{
     class ObjectAlreadyExists : public Exceptions {
     };
 
-    class LinkedListExpired: public Exceptions {
+    class LinkedListExpired {
     };
 }
 #endif //DATACENTERSMANAGER_DATAMANAGEREXCEPTIONS_H
