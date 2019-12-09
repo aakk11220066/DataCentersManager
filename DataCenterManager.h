@@ -16,7 +16,7 @@ private:
     AVLTree<AuxDataCenter> windows_tree;
 public:
     enum DataCenterManagerError {
-        SUCCESS = 0, ERROR = -1, ALLOCATION_ERROR = -2, INVALID_INPUT = -3;
+        SUCCESS = 0, ERROR = -1, ALLOCATION_ERROR = -2, INVALID_INPUT = -3
     };
 
     DataCenterManager() = default;
