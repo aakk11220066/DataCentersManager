@@ -39,16 +39,18 @@ public:
         const_cast<DoubleLinkedList &>(original).doNotDelete = true;
     }
 
-    DoubleLinkedList operator=(const DoubleLinkedList &original) {
+    DoubleLinkedList &operator=(const DoubleLinkedList &original) {
         if (original.doNotDelete) throw DataManagerExceptions::LinkedListExpired();
         head = original.head;
         tail = original.tail;
         size = original.size;
         doNotDelete = false;
         const_cast<DoubleLinkedList &>(original).doNotDelete = true;
+        return (*this);
     }
-    ~DoubleLinkedList(){
-        if (doNotDelete) throw DataManagerExceptions::LinkedListExpired();
+
+    ~DoubleLinkedList() noexcept {
+        if (doNotDelete) return;
         while(head!= nullptr){
             Node *temp = head;
             //head = head->next;
