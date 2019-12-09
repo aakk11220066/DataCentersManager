@@ -37,7 +37,7 @@ public:
     DoubleLinkedList linux_servers;
     DoubleLinkedList windows_servers;
     Array<ServerDetails> servers;
-    enum DataCenterError{SUCCESS = 0, ERROR = -1};
+    enum DataCenterError{SUCCESS = 0, FAILURE = -1, ALLOCATION_ERROR = -2, INVALID_INPUT = -3};
 
     //copy ctor
     DataCenter(const DataCenter &original) = default;
@@ -117,10 +117,10 @@ public:
 };
 
 DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, int *assigned_server) {
-    if ((os > 1) || (os < 0)) return ERROR;
-    if ((given_server >= size) || (given_server < 0)) return ERROR;
-    if (!hasFreeServer()) return ERROR;
-    if (assigned_server == nullptr) return ERROR;
+    if ((os > 1) || (os < 0)) return INVALID_INPUT;
+    if ((given_server >= size) || (given_server < 0)) return INVALID_INPUT;
+    if (!hasFreeServer()) return FAILURE;
+    if (assigned_server == nullptr) return FAILURE;
     if (!servers[given_server].getIsTaken()) {
         DataCenter::requestNonTakenServer(os, given_server);
         *assigned_server = given_server;
@@ -180,8 +180,8 @@ void DataCenter::requestNonTakenServer(int os, int given_server) {
 }
 
 DataCenter::DataCenterError DataCenter::freeServer(int given_server){
-    if ((given_server < 0)||(given_server >= size)) return ERROR;
-    if (!servers[given_server].getIsTaken()) return ERROR;
+    if ((given_server < 0)||(given_server >= size)) return INVALID_INPUT;
+    if (!servers[given_server].getIsTaken()) return FAILURE;
     servers[given_server].setIsTaken(false);
     Node* temp = new Node(given_server);
     servers[given_server].setPosition(temp);
