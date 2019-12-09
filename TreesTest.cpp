@@ -48,21 +48,27 @@ int main() {
     dcm.AddDataCenter(31, 2);
     dcm.AddDataCenter(20, 8);
     dcm.AddDataCenter(50, 3);
+    dcm.AddDataCenter(90, 4);
+    dcm.AddDataCenter(95, 5);
 
     int *arr;
     int num;
-    //dcm.RequestServer(50, 1, 1 , &num);
-    //dcm.RequestServer(50, 2, 1 , &num);
-    dcm.RemoveDataCenter(31);
-    int res = dcm.GetDataCentersByOs(0, &arr, &num);
-//
+    dcm.RequestServer(50, 1, 1, &num);
+    dcm.RequestServer(50, 2, 1, &num);
+    //dcm.RemoveDataCenter(31);
+    //dcm.RemoveDataCenter(20);
+    //dcm.RemoveDataCenter(50);
+    //dcm.RemoveDataCenter(95);
+    //dcm.RemoveDataCenter(90);
+    dcm.FreeServer(20, 1);
+    int res = dcm.GetDataCentersByOs(1, &arr, &num);
 
     printf("res is %d\n", res);
     printf("num is %d\n", num);
     for (int i=0; i<num; i++){
-        printf("data is %d\n", arr[i]);
+        //printf("data is %d\n", arr[i]);
     }
-    free(arr);
+    //free(arr);
 
     return 0;
 }
