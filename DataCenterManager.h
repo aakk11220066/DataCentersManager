@@ -84,13 +84,13 @@ public:
             DataCenter &dc_to_alter = data_centers_tree.find(dc_temp);
             AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
-            if (!dc_to_alter.freeServer(ServerID)) return ERROR;
+            if (dc_to_alter.freeServer(ServerID)) return ERROR;
             AuxDataCenter linux_dc_after_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_after_change(dc_to_alter, 1);
             UpdateTrees(linux_dc_before_change, windows_dc_before_change, linux_dc_after_change,
                         windows_dc_after_change, dc_to_alter.linux_size, dc_to_alter.windows_size);
             return SUCCESS;
-
+//
         }
         catch (DataManagerExceptions::Exceptions &e) {
             return ERROR;
