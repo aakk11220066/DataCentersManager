@@ -83,6 +83,7 @@ public:
         try {
             DataCenter dc_temp(DataCenterID);
             DataCenter &dc_to_alter = data_centers_tree.find(dc_temp);
+            if (ServerID >= dc_to_alter.size) return INVALID_INPUT;
             AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
             if (dc_to_alter.freeServer(ServerID)) return ERROR;
