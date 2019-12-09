@@ -47,7 +47,7 @@ public:
         const_cast<DoubleLinkedList &>(original).doNotDelete = true;
     }
     ~DoubleLinkedList(){
-        if (doNotDelete) return;
+        if (doNotDelete) throw DataManagerExceptions::LinkedListExpired();
         while(head!= nullptr){
             Node *temp = head;
             //head = head->next;
