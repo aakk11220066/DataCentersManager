@@ -5,7 +5,7 @@
 //#include "Data Structures/AVLTree/AVLTree.h"
 //#include <iostream>
 #include "DataCenterManager.h"
-
+#include "DataCenter.h"
 int main() {
 
     //AVLTree<int> tree; //instantiation success
@@ -44,6 +44,10 @@ int main() {
     std::cout << "\nTest complete.";
 */
 
+DataCenter dc(3,5);
+int num1;
+int res = dc.requestServer(1,3, &num1);
+printf("res is %d\n", res);
     DataCenterManager dcm;
     dcm.AddDataCenter(123, 5);
     printf("Added Data Center 123 5");
@@ -51,6 +55,7 @@ int main() {
     int num;
     int result = dcm.RequestServer(123, 3, 1, &num);
     printf("\nRequested server, returned %d.", result);
+
     /*
     int *arr;
     int num;

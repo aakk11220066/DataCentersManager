@@ -28,8 +28,10 @@ public:
         try {
             DataCenter dc_temp(DataCenterId, numOfServers);
             data_centers_tree.insert(dc_temp);
-            AuxDataCenter aux_dc_temp(dc_temp, 0);
-            linux_tree.insert(aux_dc_temp);
+            AuxDataCenter linux_aux_dc_temp(dc_temp, 0);
+            linux_tree.insert(linux_aux_dc_temp);
+            AuxDataCenter windows_aux_dc_temp(dc_temp, 0);
+            windows_tree.insert(windows_aux_dc_temp);
             return SUCCESS;
         }
         catch (DataManagerExceptions::Exceptions &e) {
@@ -102,7 +104,7 @@ public:
             linux_tree.insert(linux_dc_to_add);
         }
 
-        if (linux_dc_to_add.getServersNum()) windows_tree.remove(windows_dc_to_delete);
+        if (windows_dc_to_add.getServersNum()) windows_tree.remove(windows_dc_to_delete);
         if (windows_size) {
             windows_tree.insert(windows_dc_to_add);
         }
