@@ -51,10 +51,11 @@ int main() {
 
     int *arr;
     int num;
-    dcm.RequestServer(50, 1, 1 , &num);
-    dcm.RequestServer(50, 2, 1 , &num);
-
+    //dcm.RequestServer(50, 1, 1 , &num);
+    //dcm.RequestServer(50, 2, 1 , &num);
+    dcm.RemoveDataCenter(31);
     int res = dcm.GetDataCentersByOs(0, &arr, &num);
+
 
     printf("res is %d\n", res);
     printf("num is %d\n", num);
