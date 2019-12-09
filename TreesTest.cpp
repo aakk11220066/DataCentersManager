@@ -51,8 +51,9 @@ int main() {
 
     int *arr;
     int num;
-    dcm.RequestServer(50, 0, 1 , &num);
-    dcm.RequestServer(50, 0, 1 , &num);
+    //dcm.RequestServer(50, 0, 1 , &num);
+    //dcm.RequestServer(50, 0, 1 , &num);
+    dcm.RemoveDataCenter(31);
 
     int res = dcm.GetDataCentersByOs(0, &arr, &num);
 

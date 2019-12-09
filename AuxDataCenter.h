@@ -21,6 +21,7 @@ public:
         if (os == 1) (servers_num=dc.windows_size);
     }
     int getID() const {return id;}
+    int getServersNum() const {return servers_num;}
     bool operator> (const AuxDataCenter &aux_dc) const {
         if (servers_num < aux_dc.servers_num) return true;
         if (servers_num > aux_dc.servers_num) return false;

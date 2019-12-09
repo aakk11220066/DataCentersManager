@@ -37,11 +37,11 @@ public:
         try{
             DataCenter dc_temp(DataCenterId);
             DataCenter dc_to_delete = data_centers_tree.find(dc_temp);
-            if (!dc_to_delete.linux_size) {
+            if (dc_to_delete.linux_size) {
                 AuxDataCenter linux_dc_temp(dc_to_delete, 0);
                 linux_tree.remove(linux_dc_temp);
             }
-            if (!dc_to_delete.windows_size) {
+            if (dc_to_delete.windows_size) {
                 AuxDataCenter windows_dc_temp(dc_to_delete, 1);
                 windows_tree.remove(windows_dc_temp);
             }
@@ -53,47 +53,52 @@ public:
         }
     }
 
-    DataCenterManagerError RequestServer(int DataCenterID, int ServerID, int os, int *assignedID){
+    DataCenterManagerError RequestServer(int DataCenterID, int ServerID, int os, int *assignedID) {
         try {
             DataCenter dc_temp(DataCenterID);
-            DataCenter& dc_to_alter = data_centers_tree.find(dc_temp);
-            //DataCenter dc_before_change = dc_to_alter;
+            DataCenter &dc_to_alter = data_centers_tree.find(dc_temp);
+            AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
+            AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
             if (dc_to_alter.requestServer(os, ServerID, assignedID) != 0) return ERROR;
-            printf("hjghjgh\n");
-            //UpdateTrees(dc_before_change, dc_to_alter);
+            AuxDataCenter linux_dc_after_change(dc_to_alter, 0);
+            AuxDataCenter windows_dc_after_change(dc_to_alter, 1);
+            UpdateTrees(linux_dc_before_change, windows_dc_before_change, linux_dc_after_change,
+                        windows_dc_after_change, dc_to_alter.linux_size, dc_to_alter.windows_size);
             return SUCCESS;
         }
-        catch(DataManagerExceptions::Exceptions& e){
+        catch (DataManagerExceptions::Exceptions &e) {
             return ERROR;
         }
     }
 
-    DataCenterManagerError FreeServer(int DataCenterID, int ServerID){
-        try{
+    DataCenterManagerError FreeServer(int DataCenterID, int ServerID) {
+        try {
             DataCenter dc_temp(DataCenterID);
-            DataCenter dc_to_alter = data_centers_tree.find(dc_temp);
+            DataCenter &dc_to_alter = data_centers_tree.find(dc_temp);
+            AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
+            AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
             if (!dc_to_alter.freeServer(ServerID)) return ERROR;
-            DataCenter dc_before_change = dc_to_alter;
-            UpdateTrees(dc_before_change, dc_to_alter);
+            AuxDataCenter linux_dc_after_change(dc_to_alter, 0);
+            AuxDataCenter windows_dc_after_change(dc_to_alter, 1);
+            UpdateTrees(linux_dc_before_change, windows_dc_before_change, linux_dc_after_change,
+                        windows_dc_after_change, dc_to_alter.linux_size, dc_to_alter.windows_size);
             return SUCCESS;
 
         }
-        catch(DataManagerExceptions::Exceptions& e){
+        catch (DataManagerExceptions::Exceptions &e) {
             return ERROR;
         }
     }
 
-    void UpdateTrees(const DataCenter& dc_to_delete, const DataCenter& dc_to_add){
-        AuxDataCenter linux_dc_to_delete(dc_to_delete, 0);
-        if (dc_to_delete.linux_size) linux_tree.remove(linux_dc_to_delete);
-        if (dc_to_add.linux_size){
-            AuxDataCenter linux_dc_to_add(dc_to_add, 0);
+    void UpdateTrees(const AuxDataCenter &linux_dc_to_delete, const AuxDataCenter &windows_dc_to_delete,
+                     const AuxDataCenter &linux_dc_to_add, const AuxDataCenter &windows_dc_to_add, int linux_size, int windows_size) {
+        if (linux_dc_to_add.getServersNum()) linux_tree.remove(linux_dc_to_delete);
+        if (linux_size) {
             linux_tree.insert(linux_dc_to_add);
         }
-        AuxDataCenter windows_dc_to_delete(dc_to_delete, 1);
-        if (dc_to_delete.windows_size) windows_tree.remove(windows_dc_to_delete);
-        if (dc_to_add.windows_size){
-            AuxDataCenter windows_dc_to_add(dc_to_add, 0);
+
+        if (linux_dc_to_add.getServersNum()) windows_tree.remove(windows_dc_to_delete);
+        if (windows_size) {
             windows_tree.insert(windows_dc_to_add);
         }
     }
