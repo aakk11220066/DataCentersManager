@@ -16,7 +16,7 @@ private:
     AVLTree<AuxDataCenter> windows_tree;
 public:
     enum DataCenterManagerError {
-        SUCCESS = 0, ERROR = -1
+        SUCCESS = 0, ERROR = -1, ALLOCATION_ERROR = -2, INVALID_INPUT = -3;
     };
 
     DataCenterManager() = default;
@@ -64,6 +64,7 @@ public:
         try {
             DataCenter dc_temp(DataCenterID);
             DataCenter &dc_to_alter = data_centers_tree.find(dc_temp);
+            if (ServerID >= dc_to_alter.size) return INVALID_INPUT;
             AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
             if (dc_to_alter.requestServer(os, ServerID, assignedID) != 0) return ERROR;
