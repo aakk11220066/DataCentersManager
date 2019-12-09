@@ -6,6 +6,7 @@
 //#include <iostream>
 #include "DataCenterManager.h"
 
+
 int main() {
 
     //AVLTree<int> tree; //instantiation success
@@ -45,15 +46,15 @@ int main() {
 */
 
     DataCenterManager dcm;
-    dcm.AddDataCenter(31, 2);
+    dcm.AddDataCenter(31, 5);
     dcm.AddDataCenter(20, 8);
     dcm.AddDataCenter(50, 3);
 
     int *arr;
     int num;
-    dcm.RequestServer(50, 1, 1 , &num);
-    dcm.RequestServer(50, 2, 1 , &num);
-
+    //dcm.RequestServer(50, 1, 1 , &num);
+    //dcm.RequestServer(50, 2, 1 , &num);
+    dcm.RemoveDataCenter(31);
     int res = dcm.GetDataCentersByOs(0, &arr, &num);
 
     printf("res is %d\n", res);
