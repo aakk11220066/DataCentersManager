@@ -42,10 +42,10 @@ RM = "D:\Program Files\JetBrains\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Users\Roy\Desktop\git\DataCentersManager5
+CMAKE_SOURCE_DIR = D:\Users\Roy\Desktop\git\DataCentersManager3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Users\Roy\Desktop\git\DataCentersManager5\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Users\Roy\Desktop\git\DataCentersManager3\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled.dir/depend.make
@@ -58,29 +58,29 @@ include CMakeFiles/untitled.dir/flags.make
 
 CMakeFiles/untitled.dir/main1.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/main1.cpp.obj: ../main1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\Roy\Desktop\git\DataCentersManager5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main1.cpp.obj"
-	D:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\main1.cpp.obj -c D:\Users\Roy\Desktop\git\DataCentersManager5\main1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\Roy\Desktop\git\DataCentersManager3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main1.cpp.obj"
+	D:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\main1.cpp.obj -c D:\Users\Roy\Desktop\git\DataCentersManager3\main1.cpp
 
 CMakeFiles/untitled.dir/main1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/main1.cpp.i"
-	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\Roy\Desktop\git\DataCentersManager5\main1.cpp > CMakeFiles\untitled.dir\main1.cpp.i
+	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\Roy\Desktop\git\DataCentersManager3\main1.cpp > CMakeFiles\untitled.dir\main1.cpp.i
 
 CMakeFiles/untitled.dir/main1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/main1.cpp.s"
-	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\Roy\Desktop\git\DataCentersManager5\main1.cpp -o CMakeFiles\untitled.dir\main1.cpp.s
+	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\Roy\Desktop\git\DataCentersManager3\main1.cpp -o CMakeFiles\untitled.dir\main1.cpp.s
 
 CMakeFiles/untitled.dir/library1.cpp.obj: CMakeFiles/untitled.dir/flags.make
 CMakeFiles/untitled.dir/library1.cpp.obj: ../library1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\Roy\Desktop\git\DataCentersManager5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/library1.cpp.obj"
-	D:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\library1.cpp.obj -c D:\Users\Roy\Desktop\git\DataCentersManager5\library1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\Roy\Desktop\git\DataCentersManager3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/untitled.dir/library1.cpp.obj"
+	D:\TDM-GCC-64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\library1.cpp.obj -c D:\Users\Roy\Desktop\git\DataCentersManager3\library1.cpp
 
 CMakeFiles/untitled.dir/library1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/library1.cpp.i"
-	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\Roy\Desktop\git\DataCentersManager5\library1.cpp > CMakeFiles\untitled.dir\library1.cpp.i
+	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\Roy\Desktop\git\DataCentersManager3\library1.cpp > CMakeFiles\untitled.dir\library1.cpp.i
 
 CMakeFiles/untitled.dir/library1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/library1.cpp.s"
-	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\Roy\Desktop\git\DataCentersManager5\library1.cpp -o CMakeFiles\untitled.dir\library1.cpp.s
+	D:\TDM-GCC-64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\Roy\Desktop\git\DataCentersManager3\library1.cpp -o CMakeFiles\untitled.dir\library1.cpp.s
 
 # Object files for target untitled
 untitled_OBJECTS = \
@@ -96,7 +96,7 @@ untitled.exe: CMakeFiles/untitled.dir/build.make
 untitled.exe: CMakeFiles/untitled.dir/linklibs.rsp
 untitled.exe: CMakeFiles/untitled.dir/objects1.rsp
 untitled.exe: CMakeFiles/untitled.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Users\Roy\Desktop\git\DataCentersManager5\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable untitled.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Users\Roy\Desktop\git\DataCentersManager3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable untitled.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\untitled.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -109,6 +109,6 @@ CMakeFiles/untitled.dir/clean:
 .PHONY : CMakeFiles/untitled.dir/clean
 
 CMakeFiles/untitled.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Users\Roy\Desktop\git\DataCentersManager5 D:\Users\Roy\Desktop\git\DataCentersManager5 D:\Users\Roy\Desktop\git\DataCentersManager5\cmake-build-debug D:\Users\Roy\Desktop\git\DataCentersManager5\cmake-build-debug D:\Users\Roy\Desktop\git\DataCentersManager5\cmake-build-debug\CMakeFiles\untitled.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Users\Roy\Desktop\git\DataCentersManager3 D:\Users\Roy\Desktop\git\DataCentersManager3 D:\Users\Roy\Desktop\git\DataCentersManager3\cmake-build-debug D:\Users\Roy\Desktop\git\DataCentersManager3\cmake-build-debug D:\Users\Roy\Desktop\git\DataCentersManager3\cmake-build-debug\CMakeFiles\untitled.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/untitled.dir/depend
 

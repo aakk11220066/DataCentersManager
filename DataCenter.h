@@ -31,6 +31,7 @@ public:
 class DataCenter {
 public:
     int id;
+    int size;
     int linux_size;
     int windows_size;
     DoubleLinkedList linux_servers;
@@ -53,9 +54,9 @@ public:
      * @param given_id
      * @param servers_num
      */
-    explicit DataCenter(int given_id, int servers_num = 0) : id(given_id), linux_size(servers_num),
-                                                windows_size(0), servers(Array<ServerDetails>(linux_size)) {
-        for (int i = 0; i < linux_size; i++) {
+    explicit DataCenter(int given_id, int servers_num = 0) : id(given_id), size(servers_num), linux_size(servers_num),
+                                                windows_size(0), servers(Array<ServerDetails>(size)) {
+        for (int i = 0; i < size; i++) {
             Node *temp = new Node(i);
             linux_servers.beginningInsert(temp);
             servers[i].setPosition(temp);
@@ -63,7 +64,7 @@ public:
     }
 
     void printPosition() {
-        for (int i = 0; i < linux_size+windows_size; i++) {
+        for (int i = 0; i < size; i++) {
             std::cout << servers[i].getPosition() << "," << servers[i].getSystem() << ", " << servers[i].getIsTaken() << ", \n";
         }
     }
@@ -119,7 +120,7 @@ DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, 
     if (!hasFreeServer()) return FAILURE;
     if (assigned_server == nullptr) return FAILURE;
     if ((os > 1) || (os < 0)) return INVALID_INPUT;
-    if ((given_server >= linux_size+windows_size) || (given_server < 0)) return INVALID_INPUT;
+    if ((given_server >= size) || (given_server < 0)) return INVALID_INPUT;
     if (!servers[given_server].getIsTaken()) {
         DataCenter::requestNonTakenServer(os, given_server);
         *assigned_server = given_server;
@@ -142,7 +143,7 @@ int DataCenter::requestTakenServer(int os) {
         inserted_id = windows_servers.getTail()->getData();
         windows_servers.deleteNode(windows_servers.getTail());
     }
-    if (linux_size!= linux_size+windows_size && windows_size!= linux_size+windows_size) {
+    if (linux_size!= size && windows_size!= size) {
         if ((os == 1) && !windows_servers.getTail()) {
             linux_size--;
             windows_size++;
@@ -179,7 +180,7 @@ void DataCenter::requestNonTakenServer(int os, int given_server) {
 }
 
 DataCenter::DataCenterError DataCenter::freeServer(int given_server){
-    if ((given_server < 0)||(given_server >= linux_size+windows_size)) return INVALID_INPUT;
+    if ((given_server < 0)||(given_server >= size)) return INVALID_INPUT;
     if (!servers[given_server].getIsTaken()) return FAILURE;
     servers[given_server].setIsTaken(false);
     Node* temp = new Node(given_server);
