@@ -116,7 +116,7 @@ void DoubleLinkedList::beginningInsert(Node* p){
     }
 void DoubleLinkedList::deleteNode(Node *p){
     if (doNotDelete) {
-        printf("hig\n");
+        //printf("hig\n");
         throw DataManagerExceptions::LinkedListExpired();
     }
     if (size == 1){
@@ -142,6 +142,9 @@ void DoubleLinkedList::deleteNode(Node *p){
         tail = p->getPrevious();
         delete p;
         size--;
+        return;
+    }
+    if (p == nullptr){
         return;
     }
     else {
