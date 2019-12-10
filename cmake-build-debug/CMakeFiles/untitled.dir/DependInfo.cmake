@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/User/CLionProjects/DataCentersManager/TreesTest.cpp" "C:/Users/User/CLionProjects/DataCentersManager/cmake-build-debug/CMakeFiles/untitled.dir/TreesTest.cpp.obj"
+  "D:/Users/Roy/Desktop/git/DataCentersManager5/library1.cpp" "D:/Users/Roy/Desktop/git/DataCentersManager5/cmake-build-debug/CMakeFiles/untitled.dir/library1.cpp.obj"
+  "D:/Users/Roy/Desktop/git/DataCentersManager5/main1.cpp" "D:/Users/Roy/Desktop/git/DataCentersManager5/cmake-build-debug/CMakeFiles/untitled.dir/main1.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

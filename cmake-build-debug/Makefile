@@ -122,32 +122,59 @@ untitled/fast:
 	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
-TreesTest.obj: TreesTest.cpp.obj
+library1.obj: library1.cpp.obj
 
-.PHONY : TreesTest.obj
+.PHONY : library1.obj
 
 # target to build an object file
-TreesTest.cpp.obj:
-	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/TreesTest.cpp.obj
-.PHONY : TreesTest.cpp.obj
+library1.cpp.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/library1.cpp.obj
+.PHONY : library1.cpp.obj
 
-TreesTest.i: TreesTest.cpp.i
+library1.i: library1.cpp.i
 
-.PHONY : TreesTest.i
+.PHONY : library1.i
 
 # target to preprocess a source file
-TreesTest.cpp.i:
-	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/TreesTest.cpp.i
-.PHONY : TreesTest.cpp.i
+library1.cpp.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/library1.cpp.i
+.PHONY : library1.cpp.i
 
-TreesTest.s: TreesTest.cpp.s
+library1.s: library1.cpp.s
 
-.PHONY : TreesTest.s
+.PHONY : library1.s
 
 # target to generate assembly for a file
-TreesTest.cpp.s:
-	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/TreesTest.cpp.s
-.PHONY : TreesTest.cpp.s
+library1.cpp.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/library1.cpp.s
+.PHONY : library1.cpp.s
+
+main1.obj: main1.cpp.obj
+
+.PHONY : main1.obj
+
+# target to build an object file
+main1.cpp.obj:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main1.cpp.obj
+.PHONY : main1.cpp.obj
+
+main1.i: main1.cpp.i
+
+.PHONY : main1.i
+
+# target to preprocess a source file
+main1.cpp.i:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main1.cpp.i
+.PHONY : main1.cpp.i
+
+main1.s: main1.cpp.s
+
+.PHONY : main1.s
+
+# target to generate assembly for a file
+main1.cpp.s:
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main1.cpp.s
+.PHONY : main1.cpp.s
 
 # Help Target
 help:
@@ -158,9 +185,12 @@ help:
 	@echo ... edit_cache
 	@echo ... untitled
 	@echo ... rebuild_cache
-	@echo ... TreesTest.obj
-	@echo ... TreesTest.i
-	@echo ... TreesTest.s
+	@echo ... library1.obj
+	@echo ... library1.i
+	@echo ... library1.s
+	@echo ... main1.obj
+	@echo ... main1.i
+	@echo ... main1.s
 .PHONY : help
 
 

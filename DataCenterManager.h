@@ -44,14 +44,10 @@ public:
         try {
             DataCenter dc_temp(DataCenterId);
             DataCenter &dc_to_delete = data_centers_tree.find(dc_temp);
-            if (dc_to_delete.linux_size) {
-                AuxDataCenter linux_dc_temp(dc_to_delete, 0);
-                linux_tree.remove(linux_dc_temp);
-            }
-            if (dc_to_delete.windows_size) {
-                AuxDataCenter windows_dc_temp(dc_to_delete, 1);
-                windows_tree.remove(windows_dc_temp);
-            }
+            AuxDataCenter linux_dc_temp(dc_to_delete, 0);
+            linux_tree.remove(linux_dc_temp);
+            AuxDataCenter windows_dc_temp(dc_to_delete, 1);
+            windows_tree.remove(windows_dc_temp);
             data_centers_tree.remove(dc_temp);
             return SUCCESS;
         }
@@ -64,12 +60,13 @@ public:
         try {
             DataCenter dc_temp(DataCenterID);
             DataCenter &dc_to_alter = data_centers_tree.find(dc_temp);
-            if (ServerID >= dc_to_alter.size) return INVALID_INPUT;
+            if (ServerID >= (dc_to_alter.windows_size+dc_to_alter.linux_size)) return INVALID_INPUT;
             AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
-            if (dc_to_alter.requestServer(os, ServerID, assignedID) != 0) return ERROR;
             AuxDataCenter linux_dc_after_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_after_change(dc_to_alter, 1);
+            DataCenterManagerError res = (DataCenterManagerError )dc_to_alter.requestServer(os, ServerID, assignedID);
+            if (res != 0) return res;
             UpdateTrees(linux_dc_before_change, windows_dc_before_change, linux_dc_after_change,
                         windows_dc_after_change, dc_to_alter.linux_size, dc_to_alter.windows_size);
             return SUCCESS;
@@ -83,7 +80,7 @@ public:
         try {
             DataCenter dc_temp(DataCenterID);
             DataCenter &dc_to_alter = data_centers_tree.find(dc_temp);
-            if (ServerID >= dc_to_alter.size) return INVALID_INPUT;
+            if (ServerID >= (dc_to_alter.windows_size+dc_to_alter.linux_size)) return INVALID_INPUT;
             AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
             if (dc_to_alter.freeServer(ServerID)) return ERROR;
@@ -129,6 +126,7 @@ public:
                 Array<AuxDataCenter> list0 = linux_tree.getInOrder();
                 if (!list0.getSize()) return ERROR;
                 int size0 = (int) list0.getSize();
+
                 *dataCenters = (int *) malloc(sizeof(int) * size0);
                 //printf("size is %d\n", size0* sizeof(int));
                 //printf("size0 is %d\n", size0);

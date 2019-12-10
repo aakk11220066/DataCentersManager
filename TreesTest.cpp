@@ -43,7 +43,7 @@ int main() {
 
     std::cout << "\nTest complete.";
 */
-
+/*
 DataCenter dc(3,5);
 int num1;
 int res = dc.requestServer(1,3, &num1);
@@ -58,13 +58,16 @@ printf("res2 is %d\n", res2);
     int result2 = dcm.FreeServer(123,3);
     printf("\nRequested server, returned %d.", result);
     printf("\nRequested server, returned %d.", result2);
-
-    /*
+*/
+    DataCenterManager dcm;
+    dcm.AddDataCenter(1,1);
+    dcm.AddDataCenter(2,2);
+    dcm.AddDataCenter(3,3);
     int *arr;
     int num;
     dcm.RequestServer(50, 1, 1, &num);
     dcm.RequestServer(50, 2, 1, &num);
-    //dcm.RemoveDataCenter(31);
+    //dcm.RemoveDataCenter(2);
     //dcm.RemoveDataCenter(20);
     //dcm.RemoveDataCenter(50);
     //dcm.RemoveDataCenter(95);
@@ -75,9 +78,9 @@ printf("res2 is %d\n", res2);
     printf("res is %d\n", res);
     printf("num is %d\n", num);
     for (int i=0; i<num; i++){
-        //printf("data is %d\n", arr[i]);
+        printf("data is %d\n", arr[i]);
     }
     //free(arr);
-     */
+
     return 0;
 }
