@@ -23,7 +23,10 @@ public:
     int getSystem()const {return system;}
     bool getIsTaken()const {return is_taken;}
     Node* getPosition()const{return position;}
-    void setSystem(int given_system){system=given_system;}
+    void setSystem(int given_system){
+        system=given_system;
+
+    }
     void setIsTaken(bool given_is_taken){is_taken=given_is_taken;}
     void setPosition(Node *p) { position = p; }
 };
@@ -60,6 +63,8 @@ public:
             Node *temp = new Node(i);
             linux_servers.beginningInsert(temp);
             servers[i].setPosition(temp);
+            servers[i].setSystem(0);
+            //printf("system is %d\n", servers[i].getSystem());
         }
     }
 
@@ -117,14 +122,20 @@ public:
 };
 
 DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, int *assigned_server) {
+    printf("system is %d, taken is %d\n",servers[given_server].getSystem(), int(servers[given_server].getIsTaken()));
+    int flag = 0;
     if (!hasFreeServer()) return FAILURE;
     if (assigned_server == nullptr) return FAILURE;
     if ((os > 1) || (os < 0)) return INVALID_INPUT;
     if ((given_server >= size) || (given_server < 0)) return INVALID_INPUT;
+    printf("system is %d, taken is %d\n",servers[given_server].getSystem(), int(servers[given_server].getIsTaken()));
     if (!servers[given_server].getIsTaken()) {
         DataCenter::requestNonTakenServer(os, given_server);
         *assigned_server = given_server;
-    } else {
+        flag = 1;
+    }
+    if (flag == 0)
+    {
         *assigned_server = DataCenter::requestTakenServer(os);
     }
     return SUCCESS;
@@ -190,6 +201,8 @@ DataCenter::DataCenterError DataCenter::freeServer(int given_server){
     //printf("head is %d, tail is %d\n", windows_servers.head->m_data, windows_servers.tail->m_data);
     return SUCCESS;
     }
+
+
 
 
 

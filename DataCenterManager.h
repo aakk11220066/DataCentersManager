@@ -67,6 +67,10 @@ public:
             if (ServerID >= dc_to_alter.size) return INVALID_INPUT;
             AuxDataCenter linux_dc_before_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_before_change(dc_to_alter, 1);
+            int size = dc_to_alter.size;
+            //for (int i = 0; i < size; i++) {
+              //  printf("so sysyem is %d\n", (int)(dc_to_alter.servers[i].getSystem()));
+            //}
             if (dc_to_alter.requestServer(os, ServerID, assignedID) != 0) return ERROR;
             AuxDataCenter linux_dc_after_change(dc_to_alter, 0);
             AuxDataCenter windows_dc_after_change(dc_to_alter, 1);
