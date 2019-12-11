@@ -44,17 +44,17 @@ int main() {
     std::cout << "\nTest complete.";
 */
 
-DataCenter dc(3,5);
+DataCenter dc(3,200);
 int num1;
-int res = dc.requestServer(1,3, &num1);
-int res2 = dc.freeServer(3);
-printf("res2 is %d\n", res2);
+int res = dc.requestServer(1,140, &num1);
+//int res2 = dc.freeServer(3);
+printf("res is %d\n", res);
     DataCenterManager dcm;
-    dcm.AddDataCenter(123, 5);
-    printf("Added Data Center 123 5");
+    dcm.AddDataCenter(123, 100);
+    printf("Added Data Center 123 5\n");
 
     int num;
-    int result = dcm.RequestServer(123, 3, 1, &num);
+    int result = dcm.RequestServer(123, 87, 1, &num);
     int result2 = dcm.FreeServer(123,3);
     printf("\nRequested server, returned %d.", result);
     printf("\nRequested server, returned %d.", result2);
