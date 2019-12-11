@@ -60,6 +60,7 @@ Array<T>::Array(const Array &original): size(original.size), arr(new T[size]){
 template<typename T>
 Array<T> &Array<T>::operator=(const Array &original) {
     delete[] arr;
+    size = original.size;
     arr = new T[original.size];
     for (int i = 0; i < original.size; ++i) {
         arr[i] = original.arr[i];
