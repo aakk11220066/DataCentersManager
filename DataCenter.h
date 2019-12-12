@@ -63,26 +63,7 @@ public:
             Node *temp = new Node(i);
             linux_servers.beginningInsert(temp);
             servers[i].setPosition(temp);
-            servers[i].setSystem(0);
-            //printf("system is %d\n", servers[i].getSystem());
         }
-    }
-
-    void printPosition() {
-        for (int i = 0; i < size; i++) {
-            std::cout << servers[i].getPosition() << "," << servers[i].getSystem() << ", " << servers[i].getIsTaken() << ", \n";
-        }
-    }
-
-    void printServers() {
-        std::cout << "this linux: ";
-        linux_servers.print();
-        //printf("head is %d, tail is %d\n", linux_servers.head->m_data, linux_servers.tail->m_data);
-        std::cout << "this windows: ";
-        windows_servers.print();
-        //printf("head is %d, tail is %d\n", windows_servers.head->m_data, windows_servers.tail->m_data);
-        std::cout << "total linux = " << linux_size << "   total windows = " << windows_size << std::endl;
-
     }
 
     /**
@@ -106,36 +87,44 @@ public:
     DataCenterError requestServer(int os, int given_server, int *assigned_server);
 
 
+    /**
+     * find the server in its respective os linked list, delete the server for the list,
+     * update ServerDetails accordingly and change servers' counter accordingly.
+     * @param os
+     * @param given_server
+     */
     void requestNonTakenServer(int os, int given_server);
 
+    /**
+     * delete the server on the os linked list's head and return its ID.
+     * @param os
+     * @return
+     */
     int requestTakenServer(int os);
 
-    /**
-     *
+    /** In case the function's conditions are met, the function adds the given server to the beginning
+     * of its os linked list. In addition, the function updates ServerDetails parameters
+     * for the given server accordingly.
      * @param given_server
      * @return
      */
     DataCenterError freeServer(int given_server);
 
-    bool hasFreeServer(){ return (linux_servers.getSize() + windows_servers.getSize());}
+    //asserts size doesn't equal 0.
+    bool hasFreeServer(){ return size;}
 
 };
 
 DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, int *assigned_server) {
-    printf("system is %d, taken is %d\n",servers[given_server].getSystem(), int(servers[given_server].getIsTaken()));
-    int flag = 0;
     if (!hasFreeServer()) return FAILURE;
     if (assigned_server == nullptr) return FAILURE;
     if ((os > 1) || (os < 0)) return INVALID_INPUT;
     if ((given_server >= size) || (given_server < 0)) return INVALID_INPUT;
-    printf("system is %d, taken is %d\n",servers[given_server].getSystem(), int(servers[given_server].getIsTaken()));
     if (!servers[given_server].getIsTaken()) {
         DataCenter::requestNonTakenServer(os, given_server);
         *assigned_server = given_server;
-        flag = 1;
     }
-    if (flag == 0)
-    {
+    else {
         *assigned_server = DataCenter::requestTakenServer(os);
     }
     return SUCCESS;
@@ -144,10 +133,8 @@ DataCenter::DataCenterError DataCenter::requestServer(int os, int given_server, 
 int DataCenter::requestTakenServer(int os) {
     int inserted_id = -1, flag =0;
     if (((os == 0) && linux_servers.getSize())|| ((os == 1) && !windows_servers.getSize())) {
-        //printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
         inserted_id = linux_servers.getTail()->getData();
         linux_servers.deleteNode(linux_servers.getTail());
-        //printf("size = %d, tail = %d, end\n", linux_servers.getSize(), linux_servers.getTail());
         flag = 1;
     }
     if (((os == 1)&& windows_servers.getSize()) || (((os == 0) && !linux_servers.getSize()) && (flag == 0))) {
@@ -198,7 +185,6 @@ DataCenter::DataCenterError DataCenter::freeServer(int given_server){
     servers[given_server].setPosition(temp);
     if (servers[given_server].getSystem() ==0) linux_servers.beginningInsert(temp);
     if (servers[given_server].getSystem() ==1) windows_servers.beginningInsert(temp);
-    //printf("head is %d, tail is %d\n", windows_servers.head->m_data, windows_servers.tail->m_data);
     return SUCCESS;
     }
 

@@ -7,6 +7,9 @@
 
 #include <exception>
 
+/**
+ * Exceptions class for DataCenterManager
+ */
 namespace DataManagerExceptions{
     class Exceptions : public std::exception {
     };
@@ -17,7 +20,7 @@ namespace DataManagerExceptions{
     class ObjectAlreadyExists : public Exceptions {
     };
 
-    class LinkedListExpired {
+    class LinkedListExpired : public Exceptions {
     };
 }
 #endif //DATACENTERSMANAGER_DATAMANAGEREXCEPTIONS_H

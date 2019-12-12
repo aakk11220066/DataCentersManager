@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Users/Roy/Desktop/git/DataCentersManager3/library1.cpp" "D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/CMakeFiles/untitled.dir/library1.cpp.obj"
-  "D:/Users/Roy/Desktop/git/DataCentersManager3/main1.cpp" "D:/Users/Roy/Desktop/git/DataCentersManager3/cmake-build-debug/CMakeFiles/untitled.dir/main1.cpp.obj"
+  "D:/Users/Roy/Desktop/git/DataCentersManager/library1.cpp" "D:/Users/Roy/Desktop/git/DataCentersManager/cmake-build-debug/CMakeFiles/untitled.dir/library1.cpp.obj"
+  "D:/Users/Roy/Desktop/git/DataCentersManager/main1.cpp" "D:/Users/Roy/Desktop/git/DataCentersManager/cmake-build-debug/CMakeFiles/untitled.dir/main1.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

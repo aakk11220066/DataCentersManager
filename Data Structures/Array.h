@@ -28,10 +28,12 @@ public:
     //operator[]
     T &operator[](unsigned int index);
 
+    //get Array's size
     unsigned int getSize() const {
         return size;
     }
 
+    //copies array to a newly allocated one.
     T *toCArray() const;
 };
 
@@ -76,7 +78,6 @@ T &Array<T>::operator[](unsigned int index) {
 template<typename T>
 T *Array<T>::toCArray() const {
     T *result = new T[size];
-    const auto constThis = const_cast<Array<T> *>(this);
     for (int i = 0; i < size; ++i) {
         result[i] = (*this)[i];
     }

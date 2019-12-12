@@ -6,65 +6,65 @@
 
 #IncludeRegexTransform: 
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/AuxDataCenter.h
+D:/Users/Roy/Desktop/git/DataCentersManager/AuxDataCenter.h
 DataCenter.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataCenter.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataCenter.h
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/AVLTree.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/AVLTree/AVLTree.h
 BinarySearchTree.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/BinarySearchTree.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/AVLTree/BinarySearchTree.h
 ../../DataManagerExceptions.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataManagerExceptions.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataManagerExceptions.h
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/BinarySearchTree.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/AVLTree/BinarySearchTree.h
 BinaryTree.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/BinaryTree.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/AVLTree/BinaryTree.h
 ../../DataManagerExceptions.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataManagerExceptions.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataManagerExceptions.h
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/BinaryTree.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/AVLTree/BinaryTree.h
 ../Array.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/Array.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/Array.h
 memory
 -
 algorithm
 -
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/Array.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/Array.h
 iostream
 -
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataCenter.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataCenter.h
 iostream
 -
 linkedList.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/linkedList.h
+D:/Users/Roy/Desktop/git/DataCentersManager/linkedList.h
 Data Structures/Array.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/Array.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/Array.h
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataCenterManager.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataCenterManager.h
 Data Structures/AVLTree/AVLTree.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/Data Structures/AVLTree/AVLTree.h
+D:/Users/Roy/Desktop/git/DataCentersManager/Data Structures/AVLTree/AVLTree.h
 DataCenter.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataCenter.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataCenter.h
 AuxDataCenter.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/AuxDataCenter.h
+D:/Users/Roy/Desktop/git/DataCentersManager/AuxDataCenter.h
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataManagerExceptions.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataManagerExceptions.h
 exception
 -
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/library1.cpp
+D:/Users/Roy/Desktop/git/DataCentersManager/library1.cpp
 library1.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/library1.h
+D:/Users/Roy/Desktop/git/DataCentersManager/library1.h
 DataCenterManager.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataCenterManager.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataCenterManager.h
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/library1.h
+D:/Users/Roy/Desktop/git/DataCentersManager/library1.h
 
-D:/Users/Roy/Desktop/git/DataCentersManager3/linkedList.h
+D:/Users/Roy/Desktop/git/DataCentersManager/linkedList.h
 iostream
 -
 DataManagerExceptions.h
-D:/Users/Roy/Desktop/git/DataCentersManager3/DataManagerExceptions.h
+D:/Users/Roy/Desktop/git/DataCentersManager/DataManagerExceptions.h
 
